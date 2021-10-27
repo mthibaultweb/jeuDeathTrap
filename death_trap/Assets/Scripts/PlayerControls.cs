@@ -11,6 +11,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private float JumpHeight = 200f;
     [SerializeField] private float groundDistance = 10f;
     [SerializeField] LayerMask groundMask;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -39,23 +40,16 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             currentMoveSpeed = -MoveSpeed;
+            mainSprite.flipX = true;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             currentMoveSpeed = MoveSpeed;
+            mainSprite.flipX = false;
         }
-        /*
-        if (moveLeft)
-        {
-            currentMoveSpeed = -MoveSpeed;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            currentMoveSpeed = MoveSpeed;
-        }*/
 
         rb2D.velocity = new Vector2(currentMoveSpeed, rb2D.velocity.y);
-
+        animator.SetFloat("Speed", Mathf.Abs(currentMoveSpeed));
     }
 
     public bool IsGrounded()
