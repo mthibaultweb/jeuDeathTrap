@@ -26,7 +26,7 @@ public class DialogManager : MonoBehaviour {
     private List<DialogPage> dialogToDisplay;
 
     void Awake () {
-dialogToDisplay = new List<DialogPage>();
+        dialogToDisplay = new List<DialogPage>();
     }
 
     // Sets the dialog to be displayed

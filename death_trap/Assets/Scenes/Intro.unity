@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2313,7 +2313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dialogWithPlayer:
   - text: "Peter : Rose ?! O\xF9 es-tu ? \xC7a fait des heures que j\u2019essaie
-      de te joindre !"
+      de te joindre ! (Appuyer sur N pour passer \xE0 la suite)"
     color: {r: 0, g: 0, b: 0, a: 0}
   - text: "Rose : Des lumi\xE8res... J'ai \xE9t\xE9 sous les lumi\xE8res, je n'aurais
       pas d\xFB..."
@@ -2338,6 +2338,9 @@ MonoBehaviour:
   - text: "Rose : ELLE EST L\xC0 ! NON, NON ! "
     color: {r: 0, g: 0, b: 0, a: 0}
   - text: "Peter : ROSE ! NE BOUGE PAS J\u2019ARRIVE!"
+    color: {r: 0, g: 0, b: 0, a: 0}
+  - text: "Appuyer sur Espace pour sauter. Appuyer sur la fl\xEAche du haut pour
+      interagir avec les interrupteurs."
     color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &1972892839
 SpriteRenderer:

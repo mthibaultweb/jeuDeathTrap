@@ -46,16 +46,17 @@ public class PlayerControls : CharacterBehavior
 
         if (collision.tag == "Ruby")
         {
-            nbRuby ++;
+            nbRuby = nbRuby + 1;
             Destroy(collision.gameObject);
             text.text = nbRuby.ToString();
         }
 
         if (collision.tag == "YouWin")
         {
-           
+            
                 SceneManager.LoadScene(3);
-           
+            
+               
         }
 
         if (collision.tag == "Level2")
