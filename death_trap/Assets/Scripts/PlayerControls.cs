@@ -14,6 +14,7 @@ public class PlayerControls : CharacterBehavior
     // public Animator animator;
 
     // Start is called before the first frame update
+    public DialogManager dialogDisplayer;
     void Start()
     {
         
@@ -35,8 +36,31 @@ public class PlayerControls : CharacterBehavior
         } else {
             animator.SetBool("IsJumping", true);
         }
-    }
 
+        // If a dialog is on screen, the player should not be updated
+        
+        if (dialogDisplayer.IsOnScreen())
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+       
+    }
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.tag == "InstantDialog")
+        {
+            Dialog instantDialog = collision.GetComponent<Dialog>();
+            if (instantDialog != null)
+            {
+                dialogDisplayer.SetDialog(instantDialog.GetDialog());
+            }
+        }
+    }
 
     // public void Move()
     // {

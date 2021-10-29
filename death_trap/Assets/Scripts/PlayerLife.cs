@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class PlayerLife : MonoBehaviour
     {
        // Debug.Log(light.intensity);
         EndLife();
+        if(life == 0){
+            SceneManager.LoadScene(5);
+        }
     }
 
     public void EndLife()
