@@ -20,7 +20,7 @@ public class FireProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rb2D.velocity = transform.right * speed;
+
     }
 
     public void Launch(Vector2 direction)
@@ -32,11 +32,9 @@ public class FireProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("work");
         if (collision.tag == "Player")
         {
             Destroy(gameObject);
-            Debug.Log("dead");
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // This struct represents one dialog page
 // (text on the current page, and its color)
@@ -25,7 +26,7 @@ public class DialogManager : MonoBehaviour {
     private List<DialogPage> dialogToDisplay;
 
     void Awake () {
-
+dialogToDisplay = new List<DialogPage>();
     }
 
     // Sets the dialog to be displayed
@@ -57,10 +58,11 @@ public class DialogManager : MonoBehaviour {
             renderText.text = dialogToDisplay[0].text;
         } else
         {
-            this.gameObject.SetActive(false);
+            // this.gameObject.SetActive(false);
+            SceneManager.LoadScene(3);
         }
 
-        // Removes the page when the player presses "space"
+        // Removes the page when the player presses "n"
         if (Input.GetKeyDown(KeyCode.N))
         {
             dialogToDisplay.RemoveAt(0);

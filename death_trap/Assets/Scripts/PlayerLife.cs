@@ -32,10 +32,8 @@ public class PlayerLife : MonoBehaviour
         {
             return;
         }
-        Debug.Log("EndLife");
         if (haloLight.intensity >= 0.4)
         {
-            Debug.Log("vie -1");
             life = life - 10 * Time.deltaTime;
             healthBar.SetHealth(life);
 

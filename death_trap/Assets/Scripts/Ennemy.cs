@@ -11,6 +11,10 @@ public class Ennemy : MonoBehaviour
     private float flickeringChrono = 0f;
     private float flickerChrono = 0f;
     [SerializeField] float startFlickerTime = 1f;
+    [SerializeField] private float speed;
+    [SerializeField] private float durationBeforeSwitching;
+    private float timeInCurrentDirection = 0f;
+    private bool mustGoLeft = true;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +62,27 @@ public class Ennemy : MonoBehaviour
 
     }
 
+    void FixedUpdate()
+    {
+        Move(Time.fixedDeltaTime);
+    }
+    public void Move(float dt)
+    {
+        timeInCurrentDirection = timeInCurrentDirection + dt;
+        if (mustGoLeft)
+        {
+            rb2D.MovePosition(rb2D.position + dt * speed * Vector2.left);
+        }
+        else
+        {
+            rb2D.MovePosition(rb2D.position + dt * speed * Vector2.right);
+        }
+        if (timeInCurrentDirection > durationBeforeSwitching)
+        {
+            mustGoLeft = !mustGoLeft; // signifie : mustGoLeft devient la valeur opposée
+            timeInCurrentDirection = 0f;
+        }
+    }
     public bool PlayerNearLeft()
     {
         RaycastHit2D hit = Physics2D.Raycast(rb2D.position, Vector2.left, playerDistance, playerMask);

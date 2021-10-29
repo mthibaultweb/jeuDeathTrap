@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerControls : CharacterBehavior
 {
@@ -13,8 +14,11 @@ public class PlayerControls : CharacterBehavior
     // [SerializeField] LayerMask groundMask;
     // public Animator animator;
 
+    int nbRuby;
+    public TextMeshProUGUI text;
+
     // Start is called before the first frame update
-    public DialogManager dialogDisplayer;
+    // public DialogManager dialogDisplayer;
     void Start()
     {
         
@@ -39,10 +43,10 @@ public class PlayerControls : CharacterBehavior
 
         // If a dialog is on screen, the player should not be updated
         
-        if (dialogDisplayer.IsOnScreen())
-        {
-            return;
-        }
+        // if (dialogDisplayer.IsOnScreen())
+        // {
+        //     return;
+        // }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -52,13 +56,20 @@ public class PlayerControls : CharacterBehavior
        
     }
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag == "InstantDialog")
+        // if (collision.tag == "InstantDialog")
+        // {
+        //     Dialog instantDialog = collision.GetComponent<Dialog>();
+        //     if (instantDialog != null)
+        //     {
+        //         dialogDisplayer.SetDialog(instantDialog.GetDialog());
+        //     }
+        // }
+
+        if (collision.tag == "Ruby")
         {
-            Dialog instantDialog = collision.GetComponent<Dialog>();
-            if (instantDialog != null)
-            {
-                dialogDisplayer.SetDialog(instantDialog.GetDialog());
-            }
+            nbRuby ++;
+            Destroy(collision.gameObject);
+            text.text = nbRuby.ToString();
         }
     }
 
