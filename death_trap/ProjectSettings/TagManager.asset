@@ -9,6 +9,8 @@ TagManager:
   - InstantDialog
   - Ennemy
   - Ruby
+  - Level2
+  - YouWin
   layers:
   - Default
   - TransparentFX

@@ -21,8 +21,8 @@ public class PlayerLife : MonoBehaviour
     {
        // Debug.Log(light.intensity);
         EndLife();
-        if(life == 0){
-            SceneManager.LoadScene(5);
+        if(life <= 0){
+            SceneManager.LoadScene(2);
         }
     }
 
@@ -46,9 +46,16 @@ public class PlayerLife : MonoBehaviour
         if (collision.gameObject.tag == "Halo") {
             haloLight = collision.GetComponent<Light2D>();
         }
+
         if (collision.gameObject.tag == "Fire")
         {
             life = life - 10;
+            healthBar.SetHealth(life);
+        }
+
+        if (collision.gameObject.tag == "Ennemy")
+        {
+            life = life - 5;
             healthBar.SetHealth(life);
         }
 
@@ -56,7 +63,7 @@ public class PlayerLife : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Light")
+        if (collision.gameObject.tag == "Halo")
         {
             haloLight = null;
         }

@@ -27,7 +27,6 @@ public class FireProjectile : MonoBehaviour
     {
         
         rb2D.AddForce(direction.normalized * speed, ForceMode2D.Impulse);
-      //  transform.Rotate(new Vector3(0f, 0f, 80f) * fireSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
