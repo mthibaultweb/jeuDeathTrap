@@ -10,6 +10,7 @@ public class CharacterBehavior : MonoBehaviour
     [SerializeField] private float MoveSpeed;
     [SerializeField] private float JumpHeight;
     [SerializeField] private float groundDistance;
+    [SerializeField] private float currentMoveSpeed;
     [SerializeField] LayerMask groundMask;
     public Animator animator;
 
@@ -44,12 +45,22 @@ public class CharacterBehavior : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(currentMoveSpeed));
     }
 
+    // public void MoveLeft()
+    // { 
+    //     currentMoveSpeed = -MoveSpeed;
+    //     mainSprite.flipX = true;
+    // }
+
+    // public void MoveRight()
+    // {
+    //     currentMoveSpeed = MoveSpeed;
+    //     mainSprite.flipX = false;
+    // }
     public bool IsGrounded()
     {
         RaycastHit2D hit = Physics2D.Raycast(rb2D.position, Vector2.down, groundDistance, groundMask);
         Debug.DrawRay(rb2D.position, Vector2.down * groundDistance, Color.red);
-        return hit.collider != null; 
-        // return false;
+        return hit.collider != null;
     }
 
     public void Jump()

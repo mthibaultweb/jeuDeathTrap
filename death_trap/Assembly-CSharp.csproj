@@ -36,11 +36,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\LightSwitch.cs" />
      <Compile Include="Assets\Scripts\CharacterBehavior.cs" />
      <Compile Include="Assets\Scripts\FireProjectile.cs" />
      <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\LightBehavior.cs" />
+     <Compile Include="Assets\Scripts\LightSwitch.cs" />
+     <Compile Include="Assets\Scripts\MenuController.cs" />
      <Compile Include="Assets\Scripts\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\PlayerLife.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

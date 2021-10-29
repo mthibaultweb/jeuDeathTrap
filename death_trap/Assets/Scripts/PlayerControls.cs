@@ -27,10 +27,13 @@ public class PlayerControls : CharacterBehavior
         
         if(IsGrounded())
         {
+            animator.SetBool("IsJumping", false);
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Jump();
             }
+        } else {
+            animator.SetBool("IsJumping", true);
         }
     }
 
@@ -48,6 +51,23 @@ public class PlayerControls : CharacterBehavior
     //     {
     //         currentMoveSpeed = MoveSpeed;
     //         mainSprite.flipX = false;
+    //     }
+
+    //     rb2D.velocity = new Vector2(currentMoveSpeed, rb2D.velocity.y);
+    //     animator.SetFloat("Speed", Mathf.Abs(currentMoveSpeed));
+    // }
+
+    //     public void Move()
+    // {
+    //     float currentMoveSpeed = 0f;
+
+    //     if (Input.GetKey(KeyCode.LeftArrow))
+    //     {
+    //        MoveLeft();
+    //     }
+    //     else if (Input.GetKey(KeyCode.RightArrow))
+    //     {
+    //         MoveRight();
     //     }
 
     //     rb2D.velocity = new Vector2(currentMoveSpeed, rb2D.velocity.y);
