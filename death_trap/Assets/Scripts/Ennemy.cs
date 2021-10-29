@@ -73,12 +73,12 @@ public class Ennemy : MonoBehaviour
         if (mustGoLeft)
         {
             rb2D.MovePosition(rb2D.position + dt * speed * Vector2.left);
-             mainSprite.flipX = true;
+            mainSprite.flipX = true;
         }
         else
         {
             rb2D.MovePosition(rb2D.position + dt * speed * Vector2.right);
-             mainSprite.flipX = false;
+            mainSprite.flipX = false;
         }
         if (timeInCurrentDirection > durationBeforeSwitching)
         {

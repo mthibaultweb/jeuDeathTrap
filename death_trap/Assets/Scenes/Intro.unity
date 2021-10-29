@@ -2312,29 +2312,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dialogWithPlayer:
-  - text: "Peter : Rose ?! O\xF9 es-tu ? \xC7a fait des heures que j\u2019essaye
-      de te joindre ! (Appuyer sur \"N\" pour continuer)"
+  - text: "Peter : Rose ?! O\xF9 es-tu ? \xC7a fait des heures que j\u2019essaie
+      de te joindre !"
     color: {r: 0, g: 0, b: 0, a: 0}
-  - text: "Rose : \u2026"
+  - text: "Rose : Des lumi\xE8res... J'ai \xE9t\xE9 sous les lumi\xE8res, je n'aurais
+      pas d\xFB..."
     color: {r: 0, g: 0, b: 0, a: 0}
   - text: 'Peter : Rose ?'
     color: {r: 0, g: 0, b: 0, a: 0}
-  - text: "Rose : \u2026 Elle m\u2019a eu\u2026"
+  - text: "Rose : ...Elle m\u2019a eue..."
     color: {r: 0, g: 0, b: 0, a: 0}
   - text: "Peter : Quoi ? Qui \xE7a ?"
     color: {r: 0, g: 0, b: 0, a: 0}
-  - text: "Rose : Cette horrible femme\u2026 Dans le manoir\u2026 "
+  - text: 'Rose : Cette horrible femme... Dans le manoir... Elle me lance des potions
+      !'
     color: {r: 0, g: 0, b: 0, a: 0}
   - text: "Peter : Tu es dans le manoir de la sorci\xE8re !? Que fais-tu l\xE0-bas
       ?"
     color: {r: 0, g: 0, b: 0, a: 0}
-  - text: "Rose : \u2026 J\u2019ai peur\u2026 Viens me chercher \u2026 Je vais mourir"
+  - text: "Rose : J'ai voulu r\xE9cup\xE9rer les rubis, il me les faut... J\u2019ai
+      peur... Viens me chercher... Je vais mourir!"
     color: {r: 0, g: 0, b: 0, a: 0}
-  - text: 'Peter : Je comprend pas, tu-'
+  - text: 'Peter : Je ne comprend pas, tu-'
     color: {r: 0, g: 0, b: 0, a: 0}
-  - text: 'Rose : ELLE EST LA ! NON, NON ! '
+  - text: "Rose : ELLE EST L\xC0 ! NON, NON ! "
     color: {r: 0, g: 0, b: 0, a: 0}
-  - text: "Peter : ROSE ! NE BOUGE PAS J\u2019ARRIVE !"
+  - text: "Peter : ROSE ! NE BOUGE PAS J\u2019ARRIVE!"
     color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &1972892839
 SpriteRenderer:

@@ -59,7 +59,7 @@ dialogToDisplay = new List<DialogPage>();
         } else
         {
             // this.gameObject.SetActive(false);
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(5);
         }
 
         // Removes the page when the player presses "n"

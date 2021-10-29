@@ -6,6 +6,7 @@ public class LightSwitch : MonoBehaviour
 {
     public LightBehavior light;
     private bool canSwitch = false;
+    [SerializeField] private SpriteRenderer mainSprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class LightSwitch : MonoBehaviour
     {
         if(canSwitch && Input.GetKeyDown(KeyCode.UpArrow)){
             light.SwitchOffOn();
+            mainSprite.flipY = !mainSprite.flipY;
         }
     }
 
