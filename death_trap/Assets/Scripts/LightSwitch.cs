@@ -22,18 +22,14 @@ public class LightSwitch : MonoBehaviour
 
         private void OnTriggerEnter2D(Collider2D other) 
     {
-        Debug.Log("enter");
         if(other.gameObject.tag == "Player"){
             canSwitch = true;
-            Debug.Log("work");
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        Debug.Log("enter");
         if(other.gameObject.tag == "Player"){
             canSwitch = false;
-            Debug.Log("work");
         }
     }
 }

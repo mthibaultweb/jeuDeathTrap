@@ -7,6 +7,8 @@ TagManager:
   - Halo
   - LightSwitch
   - InstantDialog
+  - Ennemy
+  - Ruby
   layers:
   - Default
   - TransparentFX

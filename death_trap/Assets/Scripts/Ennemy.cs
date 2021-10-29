@@ -6,6 +6,7 @@ public class Ennemy : MonoBehaviour
 {
     [SerializeField] private GameObject objectToLaunch;
     [SerializeField] private Rigidbody2D rb2D;
+    [SerializeField] private SpriteRenderer mainSprite;
     [SerializeField] private float playerDistance;
     [SerializeField] LayerMask playerMask;
     private float flickeringChrono = 0f;
@@ -36,7 +37,7 @@ public class Ennemy : MonoBehaviour
                 GameObject newObject = Instantiate(objectToLaunch);
                 newObject.GetComponent<FireProjectile>().Launch(Vector2.left);
                 newObject.transform.position = this.transform.position;
-                
+
                 flickerChrono = 0f;
                
             }
@@ -72,10 +73,12 @@ public class Ennemy : MonoBehaviour
         if (mustGoLeft)
         {
             rb2D.MovePosition(rb2D.position + dt * speed * Vector2.left);
+             mainSprite.flipX = true;
         }
         else
         {
             rb2D.MovePosition(rb2D.position + dt * speed * Vector2.right);
+             mainSprite.flipX = false;
         }
         if (timeInCurrentDirection > durationBeforeSwitching)
         {
